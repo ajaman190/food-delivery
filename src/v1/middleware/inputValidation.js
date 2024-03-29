@@ -18,7 +18,7 @@ const validateInput = (req, res, next) => {
     return res.status(400).json({ error: 'Invalid item_id value.' });
   }
 
-  if (typeof zone !== 'string' || !['north', 'south', 'east', 'west'].includes(zone)) {
+  if (typeof zone !== 'string' || !['central', 'north', 'south', 'east', 'west'].includes(zone)) {
     return res
       .status(400)
       .json({ error: 'Invalid zone value, it can be either of [north, south, east, west]' });
