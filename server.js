@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 
@@ -7,6 +8,9 @@ const swaggerDocumentV1 = YAML.load('./src/v1/config/swagger.yaml');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(express.json());
 
 // Use API routes
 app.use('/api/v1', routesV1);

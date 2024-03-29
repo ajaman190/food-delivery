@@ -4,8 +4,6 @@ const { handleErrors } = require('../middleware/errorHandling');
 
 const router = express.Router();
 
-router.use(express.json());
-
 // API routes
 router.use('/pricing', pricingRoutes);
 
