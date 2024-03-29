@@ -21,7 +21,9 @@ const validateInput = (req, res, next) => {
   if (typeof zone !== 'string' || !['central', 'north', 'south', 'east', 'west'].includes(zone)) {
     return res
       .status(400)
-      .json({ error: 'Invalid zone value, it can be either of [north, south, east, west]' });
+      .json({
+        error: 'Invalid zone value, it can be either of [central, north, south, east, west]',
+      });
   }
 
   if (typeof total_distance !== 'number' || total_distance <= 0) {
